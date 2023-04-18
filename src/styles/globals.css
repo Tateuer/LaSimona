@@ -1,0 +1,196 @@
+/* @tailwind base; */
+/* @tailwind components;
+@tailwind utilities; */
+/* .fc .fc-timegrid-axis-frame {
+  display: none;
+} */
+
+.fc .fc-timegrid-slot-minor {
+  border-top-style: none;
+}
+
+@media screen and (max-width: 700px) {
+  .fc-header-toolbar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*toolbar*/
+.fc-header-toolbar {
+  background-color: #41644a;
+}
+/*titulo*/
+.fc-toolbar-title {
+  color: #e86a33;
+}
+/*evento*/
+.fc-event {
+  background-color: #e86a33;
+  width: 103% !important;
+}
+
+.fc .fc-timegrid-slot {
+  border-bottom: 0;
+  height: 1.5em;
+}
+
+/*calendario*/
+.fc {
+  background-color: #f2e3db;
+  height: 80vh;
+}
+
+/* .fc-button-group {
+  background: red;
+} */
+.fc-button {
+  background-color: red;
+}
+
+.div-mayor {
+  background: #263a29;
+  height: 100vh;
+}
+
+.encierra-todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pelota {
+  width: 50px;
+  height: 50px;
+  background-image: url("../image/pelota.png");
+  border-radius: 50%;
+  background-size: cover;
+  position: relative;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.la-simonatext {
+  display: flex;
+  justify-content: center;
+  color: #e86a33;
+  font-size: 30px;
+  text-shadow: 1px 4px 6px #e86a33;
+}
+
+.turnoscontadordiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-mes {
+  width: 50%;
+  padding: 3px 6px;
+  border-radius: 15px;
+  font-size: 20;
+  margin-top: 5px;
+  background-color: #f2e3db;
+}
+
+.contador {
+  color: #f2e3db;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*hacer mediaquery para pc y cambiar inputs*/
+.input-box {
+  display: flex;
+  justify-content: space-around;
+  background-color: #41644a;
+}
+
+.inputboton {
+  border-radius: 15px;
+  padding: 4px 8px;
+  margin: 5px;
+  background-color: #f2e3db;
+}
+
+.inputboton:active {
+  background-color: #e86a33;
+}
+
+.inputgeneral {
+  border-radius: 15px;
+  padding: 4px 8px;
+  font-size: 20;
+  margin: 5px;
+  background-color: #f2e3db;
+}
+
+.inputnombre {
+  font-size: 40;
+  padding: 10px 15px;
+}
+
+.eventodiv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eventodiv span {
+  display: flex;
+  text-align: center;
+  bottom: 0;
+  font-size: large;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: #f2e3db;
+  font-weight: bold;
+}
+
+.eventodiv button {
+  position: absolute; /* Cambiar a posición absoluta */
+  right: 0; /* Alinear a la derecha */
+  top: 0; /* Alinear a la parte superior */
+  width: 10vw;
+  height: 140%; /* Hacer que ocupe todo el alto del div */
+  border-radius: 5px;
+  background-color: #263a29;
+  color: #f2e3db;
+}
+
+
+
+/*fecha*/
+/* .fc-header-toolbar {
+  background-color: green; 
+} */
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --fc-border-color: black;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
