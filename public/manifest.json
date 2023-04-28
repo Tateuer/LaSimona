@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "196.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
-      "sizes": "196x196",
+      "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "512.png",
+      "src": "android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
