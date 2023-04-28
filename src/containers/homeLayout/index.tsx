@@ -110,10 +110,12 @@ export default function DemoApp() {
         eventContent={(eventInfo) => {
           return (
             <div className="eventodiv">
-              <span>{eventInfo.event.title}</span>
+               <div>{eventInfo.event.title}</div> 
+               <div>
               <button onClick={() => handleDeleteEvent(eventInfo.event.id)}>
                 X
               </button>
+              </div>
             </div>
           );
         }}
