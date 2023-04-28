@@ -141,8 +141,12 @@
   padding: 10px 15px;
 }
 
+.fc-event .fc-event-main{
+z-index: none;
+}
 .onclikdiv {
   position: relative;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
