@@ -163,7 +163,7 @@
   position: absolute; /* Cambiar a posición absoluta */
   right: 0; /* Alinear a la derecha */
   top: 0; /* Alinear a la parte superior */
-  width: 10vw;
+  width: 20vw;
   height: 140%; /* Hacer que ocupe todo el alto del div */
   border-radius: 5px;
   background-color: #263a29;
