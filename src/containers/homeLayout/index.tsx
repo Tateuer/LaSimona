@@ -18,6 +18,8 @@ interface turnosType {
 export default function DemoApp() {
   const [turnos, setTurnos] = useState<turnosType[]>([]);
   const [mes, setMes] = useState<number>();
+  // const [showConfirmation, setShowConfirmation] = useState(false);
+  // const [eventIdToDelete, setEventIdToDelete] = useState(null);
 
   const fetchTurnos = async () => {
     const turnosCollection = collection(db, "turnos");
@@ -51,6 +53,29 @@ export default function DemoApp() {
       }
     }
   };
+  // const handleDeleteEvent = (id: string) => {
+  //   setEventIdToDelete(id);
+  //   setShowConfirmation(true);
+  // };
+
+  // const handleConfirmDelete = async () => {
+  //   try {
+  //     const docRef = doc(db, "turnos", eventIdToDelete);
+  //     await deleteDoc(docRef);
+  //     toast.success("Turno eliminado!");
+  //     fetchTurnos();
+  //   } catch (error: unknown) {
+  //     if (error instanceof Error) {
+  //       toast.error("Error: " + error.message);
+  //     } else {
+  //       toast.error("Error desconocido");
+  //     }
+  //   } finally {
+  //     // Ocultar la ventana modal y limpiar el estado temporal
+  //     setEventIdToDelete(null);
+  //     setShowConfirmation(false);
+  //   }
+  // };
 
   const handlerSumaMes = (e: string) => {
     const turnosPorMes = turnos.filter((t) => t.start.slice(0, 7) === e);
