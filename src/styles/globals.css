@@ -142,11 +142,11 @@
 }
 
 .fc-event .fc-event-main{
-z-index: none;
+z-index: 3;
 }
 .onclikdiv {
   position: relative;
-  z-index: 1000;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
