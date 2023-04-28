@@ -9,6 +9,8 @@ import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import esLocale from "@fullcalendar/core/locales/es";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content'
 
 interface turnosType {
   title: string;
@@ -18,6 +20,7 @@ interface turnosType {
 export default function DemoApp() {
   const [turnos, setTurnos] = useState<turnosType[]>([]);
   const [mes, setMes] = useState<number>();
+  const MySwal = withReactContent(Swal)
   // const [showConfirmation, setShowConfirmation] = useState(false);
   // const [eventIdToDelete, setEventIdToDelete] = useState(null);
 
@@ -82,6 +85,8 @@ export default function DemoApp() {
     setMes(turnosPorMes.length);
   };
 
+
+ 
   return (
     <div className="div-mayor">
       <div className="encierra-todo">
@@ -108,13 +113,27 @@ export default function DemoApp() {
           end: "today,prev,next,dayGridMonth,timeGridWeek,timeGridDay",
         }}
         eventContent={(eventInfo) => {
+          const handleModal = (id: string) => {
+            MySwal.fire({
+              title: "¿Quiere eliminar el turno?",
+              text: "",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#d33",
+              cancelButtonColor: "#3085d6",
+              confirmButtonText: "Borrar !",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                handleDeleteEvent(id);
+                Swal.fire("Borrado!", "El turno ha sido borrado.", "success");
+              }
+            });
+          };
+        
           return (
-            <div className="eventodiv">
-               <div>{eventInfo.event.title}</div> 
-               <div>
-              <button onClick={() => handleDeleteEvent(eventInfo.event.id)}>
-                X
-              </button>
+            <div className="onclikdiv" onClick={() => handleModal(eventInfo.event.id)}>
+              <div className="eventodiv">
+                <span>{eventInfo.event.title}</span>  
               </div>
             </div>
           );
