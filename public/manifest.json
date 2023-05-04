@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "196.png",
+      "src": "pelota(192).png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "512.png",
+      "src": "pelota(512).png",
       "type": "image/png",
       "sizes": "512x512"
     }

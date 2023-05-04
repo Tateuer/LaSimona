@@ -10,7 +10,7 @@ import esLocale from "@fullcalendar/core/locales/es";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from "sweetalert2-react-content";
 
 interface turnosType {
   title: string;
@@ -20,7 +20,7 @@ interface turnosType {
 export default function DemoApp() {
   const [turnos, setTurnos] = useState<turnosType[]>([]);
   const [mes, setMes] = useState<number>();
-  const MySwal = withReactContent(Swal)
+  const MySwal = withReactContent(Swal);
   // const [showConfirmation, setShowConfirmation] = useState(false);
   // const [eventIdToDelete, setEventIdToDelete] = useState(null);
 
@@ -85,8 +85,6 @@ export default function DemoApp() {
     setMes(turnosPorMes.length);
   };
 
-
- 
   return (
     <div className="div-mayor">
       <div className="encierra-todo">
@@ -113,9 +111,9 @@ export default function DemoApp() {
           end: "today,prev,next,dayGridMonth,timeGridWeek,timeGridDay",
         }}
         eventContent={(eventInfo) => {
-          const handleModal = (id: string) => {
+          const handleModal = (id: string, nombre: string) => {
             MySwal.fire({
-              title: "¿Quiere eliminar el turno?",
+              title: `¿Quiere eliminar el turno ${nombre}?`,
               text: "",
               icon: "warning",
               showCancelButton: true,
@@ -129,11 +127,16 @@ export default function DemoApp() {
               }
             });
           };
-        
+
           return (
-            <div className="onclikdiv" onClick={() => handleModal(eventInfo.event.id)}>
+            <div
+              className="onclikdiv"
+              onClick={() =>
+                handleModal(eventInfo.event.id, eventInfo.event.title)
+              }
+            >
               <div className="eventodiv">
-                <span>{eventInfo.event.title}</span>  
+                <span>{eventInfo.event.title}</span>
               </div>
             </div>
           );
